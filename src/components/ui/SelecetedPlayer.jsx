@@ -26,7 +26,9 @@ const SelecetedPlayer = ({ selectedPlayer, handleDeleteSelectedPlayer, setModalP
 
             </div>
             <button
-            onClick={() => handleDeleteSelectedPlayer(selectedPlayer)}
+            onClick={(e) => {
+                e.stopPropagation();
+                handleDeleteSelectedPlayer(selectedPlayer)}}
             className='btn text-red-500'><MdDelete></MdDelete></button>
             
         </div>
