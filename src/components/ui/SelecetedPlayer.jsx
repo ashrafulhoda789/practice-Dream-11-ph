@@ -2,9 +2,10 @@ import React from 'react';
 import { FaUser } from 'react-icons/fa';
 import { MdDelete } from 'react-icons/md';
 
-const SelecetedPlayer = ({ selectedPlayer }) => {
-    console.log(selectedPlayer);
-    const { PlayerImg, PlayerName, PlayerType } = selectedPlayer
+const SelecetedPlayer = ({ selectedPlayer, handleDeleteSelectedPlayer }) => {
+    // console.log(selectedPlayer);
+    const { PlayerImg, PlayerName, PlayerType } = selectedPlayer;
+    
     return (
         <div className='flex justify-between mb-5 border border-gray-200 shadow-lg rounded-2xl p-5 items-center'>
             <div className='flex gap-6 items-center'>
@@ -19,7 +20,9 @@ const SelecetedPlayer = ({ selectedPlayer }) => {
                 </div>
 
             </div>
-            <button className='btn text-red-500'><MdDelete></MdDelete></button>
+            <button
+            onClick={() => handleDeleteSelectedPlayer(selectedPlayer)}
+            className='btn text-red-500'><MdDelete></MdDelete></button>
         </div>
     );
 };
