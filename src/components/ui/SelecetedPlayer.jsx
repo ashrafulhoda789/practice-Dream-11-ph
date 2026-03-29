@@ -1,13 +1,18 @@
 import React from 'react';
 import { FaUser } from 'react-icons/fa';
 import { MdDelete } from 'react-icons/md';
+import Modal from '../modal/Modal';
 
-const SelecetedPlayer = ({ selectedPlayer, handleDeleteSelectedPlayer }) => {
+const SelecetedPlayer = ({ selectedPlayer, handleDeleteSelectedPlayer, setModalPlayer }) => {
     // console.log(selectedPlayer);
     const { PlayerImg, PlayerName, PlayerType } = selectedPlayer;
     
     return (
-        <div className='flex justify-between mb-5 border border-gray-200 shadow-lg rounded-2xl p-5 items-center'>
+        <div
+        onClick={() => {
+            setModalPlayer(selectedPlayer);
+            document.getElementById('my_modal_5').showModal()}} 
+         className='flex justify-between mb-5 border border-gray-200 shadow-lg rounded-2xl p-5 items-center'>
             <div className='flex gap-6 items-center'>
                 <img className='w-15 border border-gray-200 rounded-lg' src={PlayerImg} alt="" />
                 <div className='space-y-1'>
@@ -23,6 +28,7 @@ const SelecetedPlayer = ({ selectedPlayer, handleDeleteSelectedPlayer }) => {
             <button
             onClick={() => handleDeleteSelectedPlayer(selectedPlayer)}
             className='btn text-red-500'><MdDelete></MdDelete></button>
+            
         </div>
     );
 };

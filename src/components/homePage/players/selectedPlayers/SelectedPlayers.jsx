@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaUser } from 'react-icons/fa';
 import SelecetedPlayer from '../../../ui/SelecetedPlayer';
 import { toast } from 'react-toastify';
+import Modal from '../../../modal/Modal';
 
 const SelectedPlayers = ({ selectedPlayers, setSelectedPlayers, coin, setCoin }) => {
     // console.log(selectedPlayers);
+
+    const [modalPlayer, setModalPlayer] = useState(null);
 
     const handleDeleteSelectedPlayer = (selectedPlayer) => {
         const filteredPlayer = selectedPlayers.filter(selectPlayer => selectPlayer.PlayerName !== selectedPlayer.PlayerName);
@@ -25,9 +28,16 @@ const SelectedPlayers = ({ selectedPlayers, setSelectedPlayers, coin, setCoin })
                     </div>
                     :
 
-                    selectedPlayers.map((selectedPlayer, index) => <SelecetedPlayer key={index} selectedPlayer={selectedPlayer} handleDeleteSelectedPlayer={handleDeleteSelectedPlayer}></SelecetedPlayer>)
+                    selectedPlayers.map((selectedPlayer, index) => <SelecetedPlayer key={index}
+                        selectedPlayer={selectedPlayer}
+                        handleDeleteSelectedPlayer={handleDeleteSelectedPlayer}
+                        setModalPlayer={setModalPlayer}
+                        ></SelecetedPlayer>)
 
             }
+
+            <Modal modalPlayer={modalPlayer}></Modal>
+            
         </div>
     );
 };

@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { FaFlag, FaUser } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 
-const Card = ({ player, coin, setCoin, selectedPlayers, setSelectedPlayers }) => {
+const Card = ({ player, coin, setCoin, selectedPlayers, setSelectedPlayers}) => {
     // console.log(player);
     const { PlayerImg, PlayerName, PlayerType, rating, PlayerCountry, BattingStyle, BowlingStyle, Price } = player
 
     const [isSelected, setIsSelected] = useState(false);
 
     const handleChoosePlayer = () => {
+
         let newCoin = coin - Price;
         if (newCoin >= 0) {
             toast.success(`${PlayerName} is selected`)
