@@ -1,5 +1,6 @@
 import React from 'react';
 import navIcon from '../../assets/logo.png'
+import icon from '../../assets/dollar-1.png'
 
 const Navbar = ({coin}) => {
     return (
@@ -28,7 +29,9 @@ const Navbar = ({coin}) => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">{coin} Coins</a>
+                    <a className="btn border-green-300 bg-white font-bold">{coin} Coins 
+                        <img src={icon} alt="" />
+                    </a>
                 </div>
             </div>
         </div>

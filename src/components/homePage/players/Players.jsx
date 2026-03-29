@@ -11,7 +11,7 @@ const Players = ({ playerPromise, coin, setCoin }) => {
 
     return (
         <div>
-            <div className='flex justify-between items-center'>
+            <div className='flex flex-col-reverse md:flex-row justify-between items-center gap-4'>
                 {
                     toggle === "available" ?
                         <h1 className='text-lg md:text-[28px] font-bold'>Available Players</h1>
@@ -26,7 +26,7 @@ const Players = ({ playerPromise, coin, setCoin }) => {
 
                     <button
                         onClick={() => setToggle("selected")}
-                        className={`btn ${toggle === "selected" ? "bg-[#E7FE29]" : ""} rounded-l-none rounded-r-xl text-sm md:text-[16px] font-bold`}>Selected</button>
+                        className={`btn ${toggle === "selected" ? "bg-[#E7FE29]" : ""} rounded-l-none rounded-r-xl text-sm md:text-[16px] font-bold`}>Selected({selectedPlayers.length})</button>
                 </div>
             </div>
 

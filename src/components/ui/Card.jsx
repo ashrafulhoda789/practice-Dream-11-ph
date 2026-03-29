@@ -50,7 +50,7 @@ const Card = ({ player, coin, setCoin, selectedPlayers, setSelectedPlayers }) =>
                     <p className='text-right text-[16px] font-semibold text-gray-600'>{BowlingStyle}</p>
                 </div>
 
-                <div className="card-actions justify-end">
+                <div className="card-actions justify-end items-center">
                     <p className='text-[16px] font-semibold'>Price: ${Price}</p>
                     <button
                         onClick={() => handleChoosePlayer()}
