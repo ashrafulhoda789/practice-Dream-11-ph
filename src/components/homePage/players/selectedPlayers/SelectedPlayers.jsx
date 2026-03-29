@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaUser } from 'react-icons/fa';
 import SelecetedPlayer from '../../../ui/SelecetedPlayer';
+import { toast } from 'react-toastify';
 
 const SelectedPlayers = ({selectedPlayers, setSelectedPlayers, coin, setCoin}) => {
     // console.log(selectedPlayers);
@@ -9,6 +10,7 @@ const SelectedPlayers = ({selectedPlayers, setSelectedPlayers, coin, setCoin}) =
         const filteredPlayer = selectedPlayers.filter(selectPlayer => selectPlayer.PlayerName !== selectedPlayer.PlayerName);
 
         setSelectedPlayers(filteredPlayer);
+        toast(`${selectedPlayer.PlayerName} is deleted`);
 
         let addCoin = coin + selectedPlayer.Price;
         setCoin(addCoin);

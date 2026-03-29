@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaFlag, FaUser } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 const Card = ({ player, coin, setCoin, selectedPlayers, setSelectedPlayers }) => {
     // console.log(player);
@@ -10,11 +11,11 @@ const Card = ({ player, coin, setCoin, selectedPlayers, setSelectedPlayers }) =>
     const handleChoosePlayer = () => {
         let newCoin = coin - Price;
         if (newCoin >= 0) {
-            alert(`${PlayerName} is selected`);
+            toast.success(`${PlayerName} is selected`)
             setCoin(newCoin);
         }
         else {
-            alert("Not enough money");
+            toast.warn("Not enough coin to purchase this player")
             return;
         }
 

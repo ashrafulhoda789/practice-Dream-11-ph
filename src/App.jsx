@@ -3,6 +3,7 @@ import './App.css'
 import Banner from './components/banner/Banner'
 import Players from './components/homePage/players/Players'
 import Navbar from './components/navbar/Navbar'
+import { ToastContainer } from 'react-toastify'
 
 const fetchPlayer = async () => {
   const res = await fetch('/data.json')
@@ -27,6 +28,8 @@ function App() {
             coin={coin} setCoin={setCoin}
             playerPromise={playerPromise}></Players>
         </Suspense>
+
+        <ToastContainer></ToastContainer>
       </main>
     </>
   )
