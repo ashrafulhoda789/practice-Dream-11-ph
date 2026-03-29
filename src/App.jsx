@@ -3,6 +3,7 @@ import './App.css'
 import Banner from './components/banner/Banner'
 import Players from './components/homePage/players/Players'
 import Navbar from './components/navbar/Navbar'
+import Footer from './components/footer/footer'
 import { ToastContainer } from 'react-toastify'
 
 const fetchPlayer = async () => {
@@ -31,6 +32,10 @@ function App() {
 
         <ToastContainer></ToastContainer>
       </main>
+
+      <footer>
+       <Footer></Footer>
+      </footer>
     </>
   )
 }

@@ -22,9 +22,9 @@ const Navbar = ({coin}) => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-lg font-semibold">
-                        <li><a href=''>Home</a></li>
+                        <li><a>Home</a></li>
                         
-                        <li><a href=''>Teams</a></li>
+                        <li><a>Teams</a></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
